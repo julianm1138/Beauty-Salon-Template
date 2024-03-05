@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Your Title</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    >
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-column">
+        <button id="menuButton" class="hidden">
+          <i class="fas fa-bars"></i>
+        </button>
+        <h1 class="title">Your Title</h1>
+        <nav class="hidden-nav">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </nav>
+        <div class="search-bar">
+          <input type="text" placeholder="Search..." />
+          <button type="submit">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+        <footer>
+          <div class="footer-icons">
+            <a href="https://www.facebook.com">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://www.twitter.com">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://www.pinterest.com">
+              <i class="fab fa-pinterest"></i>
+            </a>
+            <a href="https://www.youtube.com">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </footer>
+      </div>
+      <div class="main-content">
+        <div class="section-div">
+          <h1 class="hero">Essence of Natural Beauty</h1>
+        </div>
+        <div class="bottom-div" id="expand">
+          <button id="expandButton">
+            <i class="fas fa-arrow-up"></i>
+          </button>
+          <div class="bottom-content">
+          
+            <div class="inner-special" id="innerSpecial">
+              <h2 id="more-info">What Do You Need?</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                sed nisl vel. Lorem ipsum dolor sit amet, consectetur adipiscing
+                elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+              <button class="learn-button">Learn More</button>
+            </div>
+          </div>
+          <div class="inner">
+            <h2>Beauty Center</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+              sed nisl vel
+            </p>
+          </div>
+          <div class="inner">
+            <h2>Spa Center</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+              sed nisl vel
+            </p>
+          </div>
+          <div class="inner">
+            <h2>Nails Center</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+              sed nisl vel
+            </p>
+          </div>
+        </div>
+      </div>
+  </body>
+  <script>
+    // show/hide inner-special content
+    const expandableDiv = document.getElementById("expand");
+    const expandButton = document.getElementById("expandButton");
+    const innerSpecial = document.getElementById("innerSpecial");
+
+    let isExpanded = false;
+
+    expandButton.addEventListener("click", toggleDiv);
+
+    function toggleDiv() {
+    if (isExpanded) {
+      expandableDiv.style.height = "200px";
+      expandButton.innerHTML = '<i class="fas fa-arrow-up"></i>';
+      innerSpecial.style.display = "none"; // Hide inner-special content
+      expandButton.style.top = "-20px"; // Adjust the button's top position when collapsed
+    } else {
+      expandableDiv.style.height = "450px";
+      expandButton.innerHTML = '<i class="fas fa-arrow-down"></i>';
+      innerSpecial.style.display = "block"; // Show inner-special content
+      expandButton.style.top = "215px";
+
+    }
+      isExpanded = !isExpanded;
+
+      const buttonPosition = isExpanded ? "bottom: -2px;" : "bottom: 15px;";
+      expandButton.setAttribute("style", buttonPosition);
+    }
+    expandButton.addEventListener("click", toggleDiv);
+
+
+
+
+
+    
+
+    const menuButton = document.getElementById("menuButton");
+    const hiddenNav = document.querySelector(".hidden-nav");
+
+    let isMenuOpen = false;
+
+    menuButton.addEventListener("click", toggleMenu);
+
+    function toggleMenu() {
+      if (isMenuOpen) {
+        hiddenNav.style.display = "none"; // Close the menu
+      } else {
+        hiddenNav.style.display = "block"; // Open the menu
+      }
+      isMenuOpen = !isMenuOpen;
+    }
+
+
+
+  </script>
+
+</html>
